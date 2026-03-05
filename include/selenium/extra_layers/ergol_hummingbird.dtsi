@@ -63,9 +63,11 @@
         ;
     };
   };
+};
 
-  // Extra layers defned specifically for this keymap.
-  // They are appended at the end of the base keymap.
+// Extra layers defned specifically for this keymap.
+// They are appended at the end of the base keymap.
+/ {
   keymap {
     compatible = "zmk,keymap";
 
@@ -78,7 +80,13 @@
            &EZ_SL(ODK_SHIFT_LAYER)  &odk SPACE  &trans     &trans  &odk SPACE  &trans
       >;
     };
+  };
+};
 
+
+/{
+  keymap {
+    compatible = "zmk,keymap";
     shifted_one_dead_key {
       display-name = "ShiftedOneDeadKey";
       bindings = <
@@ -88,7 +96,13 @@
                             &trans   &odks SPACE  &trans      &trans   &odks SPACE  &trans
       >;
     };
+  };
+};
 
+
+/{
+  keymap {
+    compatible = "zmk,keymap";
     extra_symbols {
       display-name = "ExtraSymbols";
       bindings = <
