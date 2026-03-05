@@ -97,7 +97,12 @@
                 LTHUMB_TUCK  LTHUMB_HOME  LTHUMB_REACH    RTHUMB_REACH  RTHUMB_HOME  RTHUMB_TUCK
       >;
     };
+  };
+};
 
+/ {
+  keymap {
+    compatible = "zmk,keymap";
     // 1. NumLock layer -- NavNum layer that stays on until deactivated without holding key
     num_lock_layer: num_lock_layer {
       display-name = "NumLock";
@@ -108,7 +113,12 @@
                  &trans  &sc NUM_NAV_LAYER BACKSPACE  &kp (TAB)  &trans  &lt NUM_NAV_LAYER LS(SPACE)  &EZ_SL(SYMBOLS_LAYER)
       >;
     };
+  };
+};
 
+/ {
+  keymap {
+    compatible = "zmk,keymap";
     // 2. Symbols layer -- with Ergol, basically just an AltGr layer with custom thumb keys
     //                  -- can be redefined for non-AltGr layouts such as QWERTY-ANSI
     symbols_layer: symbols_layer {
@@ -120,7 +130,12 @@
                     SYM_NUM_LAYER  &kp SPACE  &kp ENTER     &trans  &kp RALT  &trans
       >;
     };
+  };
+};
 
+/ {
+  keymap {
+    compatible = "zmk,keymap";
     // 3. VimNav layer -- HJKL arrow cluster on the right hand
     //                 -- best used along with the NumRow layer
     //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
@@ -133,7 +148,12 @@
         &kp CAPSLOCK  &lt FUNCTION_LAYER DEL  &mo NUM_ROW_LAYER   &trans   &mo FUNCTION_LAYER  &EZ_LSK(RALT)
       >;
     };
+  };
+};
 
+/ {
+  keymap {
+    compatible = "zmk,keymap";
     // 4. NumNav layer -- inverted T arrow cluster on the left hand, numpad on the right hand
     //                 -- can be the only extra layer you need if you're not too picky with number+symbols n-grams
     //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
@@ -146,7 +166,12 @@
                &kp CAPSLOCK  &sc FUNCTION_LAYER DEL  &kp LS(TAB)  &kp ESCAPE  &lt FUNCTION_LAYER LS(SPACE)  &EZ_LSK(RALT)
       >;
     };
+  };
+};
 
+/ {
+  keymap {
+    compatible = "zmk,keymap";
     // 5. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
     //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergol)
     //                 -- best used along with the VimNav layer
@@ -159,7 +184,12 @@
                                       &trans  &kp RS(SPACE) &trans           &trans  &kp LS(SPACE) &kp RALT
       >;
     };
+  };
+};
 
+/ {
+  keymap {
+    compatible = "zmk,keymap";
     // 6. Function layer -- F1..12 pad on the left hand, HRM on the right hand (with an additional Shift key)
     //                   -- reset and bootloader reset on difficult thumb keys
     //                   -- could be completed with other rare keys
