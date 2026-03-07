@@ -1,5 +1,3 @@
-#include "../keymaps/aliases.h" // defines symbols and actions
-
 #ifndef SLN_BASE_LAYER
 #define SLN_BASE_LAYER(name, LOUT1,  LROW1,  RROW1,  ROUT1, \
                              LOUT2,  LROW2,  RROW2,  ROUT2, \
