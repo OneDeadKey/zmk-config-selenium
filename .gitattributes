@@ -3,6 +3,5 @@
 *.dtsi   linguist-language=c
 *.dts    linguist-language=c
 
-# INI is a decent fallback for conf/_defconfig files
-*.conf      linguist-language=ini
-*_defconfig linguist-language=ini
+# INI is a decent fallback for conf files
+*.conf linguist-language=ini
