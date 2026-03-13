@@ -45,7 +45,7 @@
     compatible = "zmk,keymap";
 
     base_layer: base_layer {
-      display-name = "Base"
+      display-name = "Base";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  &kp N0  &kp N2  &kp N7  &kp RA(E) &trans   ,  &trans  &kp SQT &trans  &trans  &trans        ,  &trans,
         &trans  ,  &kpc Q  &trans  &kpc E  &kp N6  &kp N8     ,  &trans  &kpc U  &kpc I  &kpc O  &trans        ,  &trans,

@@ -122,7 +122,7 @@
     //               -- the Space Cadet layer-tap on the right can be replaced by an AltGr/Enter mod-tap
     //               -- adjust the homerow mods with the #define statements above
     base_layer: base_layer {
-      display-name = "Base"
+      display-name = "Base";
       bindings = <SLN_KEYMAP_BINDINGS(
         &kp TAB    ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &kp BACKSPACE ,
         &kp ESCAPE ,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &kp ENTER     ,
@@ -133,7 +133,7 @@
 
     // 1. NumLock layer -- NavNum layer that stays on until deactivated without holding key
     num_lock_layer: num_lock_layer {
-      display-name = "NumLock"
+      display-name = "NumLock";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to BASE_LAYER S_N7  S_N8  S_N9  S_FSLH  ,  &trans ,
         &trans  ,  S_EQUAL  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS        S_N4  S_N5  S_N6  S_N0    ,  &trans ,
@@ -145,7 +145,7 @@
     // 2. Symbols layer -- with Ergol, basically just an AltGr layer with custom thumb keys
     //                  -- can be redefined for non-AltGr layouts such as QWERTY-ANSI
     symbols_layer: symbols_layer {
-      display-name = "Symbols"
+      display-name = "Symbols";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  S_CARET S_LT    S_GT    S_DLLR  S_PRCNT   ,   S_AT    S_AMPS  S_STAR  S_SQT   S_GRAVE  ,  &trans ,
         &trans  ,  S_LBRC  S_LPAR  S_RPAR  S_RBRC  S_EQUAL   ,   S_BSLH  S_PLUS  S_MINUS S_FSLH  S_DQT    ,  &trans ,
@@ -158,7 +158,7 @@
     //                 -- best used along with the NumRow layer
     //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
     vim_nav_layer: vim_nav_layer {
-      display-name = "VimNav"
+      display-name = "VimNav";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  &kp CAPS X_CLOSE  X_PREV   X_NEXT    &none     ,   &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp DEL ,  &trans ,
         &trans  ,  X_ALL    X_SAVE   X_SHTAB  &kp TAB   &none     ,   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none   ,  &trans ,
@@ -171,7 +171,7 @@
     //                 -- can be the only extra layer you need if you're not too picky with number+symbols n-grams
     //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
     nav_num_layer: nav_num_layer {
-      display-name = "NavNum"
+      display-name = "NavNum";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  &kp ESC  &kp HOME &kp UP   &kp END   &kp PG_UP   ,   &to NUM_LOCK_LAYER S_N7  S_N8  S_N9  S_FSLH  ,  &trans ,
         &trans  ,  X_ALL    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN   ,   S_MINUS            S_N4  S_N5  S_N6  S_N0    ,  &trans ,
@@ -184,7 +184,7 @@
     //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergol)
     //                 -- best used along with the VimNav layer
     num_row_layer: num_row_layer {
-      display-name = "NumRow"
+      display-name = "NumRow";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  &kp RS(N1) &kp RS(N2) &kp RS(N3) &kp RS(N4) &kp RS(N5)   ,   &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0)  ,  &trans ,
         &trans  ,  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       ,   &kp N6     &kp N7     &kp N8     &kp N9     &kp N0      ,  &trans ,
@@ -197,7 +197,7 @@
     //                   -- reset and bootloader reset on difficult thumb keys
     //                   -- could be completed with other rare keys
     function_layer: function_layer {
-      display-name = "Function"
+      display-name = "Function";
       bindings = <SLN_KEYMAP_BINDINGS(
         &trans  ,  &kp F1  &kp F2  &kp F3  &kp F4  &none   ,   &none &kp C_PREV     &kp C_VOL_UP     &kp C_BRI_UP        &kp SLCK           ,  &trans ,
         &trans  ,  &kp F5  &kp F6  &kp F7  &kp F8  &none   ,   &none &hrm LALT C_PP &hrm RCTL C_MUTE &hrm RGUI C_AL_LOCK &hrm LSHIFT PSCRN  ,  &trans ,
