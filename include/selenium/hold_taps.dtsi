@@ -75,7 +75,7 @@
   #define REACH_TAP TAB
 #endif
 
-#if defined HT_TWO_THUMB_KEYS && !defined VIM_NAVIGATION
+#if defined HT_TWO_THUMB_KEYS
   #define SYM_NUM_LAYER &sc NUM_NAV_LAYER CAPSLOCK
 #else
   #define SYM_NUM_LAYER &EZ_SL(NUM_LAYER)
