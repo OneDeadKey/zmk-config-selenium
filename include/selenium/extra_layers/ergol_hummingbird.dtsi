@@ -9,7 +9,7 @@
     &kp Z  ,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp N  &kp U  &kp I     &dead_key &kp P     ,  &kp FSLH ,
     &kp Z  ,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L     HRM_SEMI  ,  &kp FSLH ,
     &none  ,  &kp Q  &kp X  &kp C  &kp V  &kp B   ,   &kp Y  &kp M  &kp COMMA &kp DOT   &kp P     ,  &none    ,
-        LTHUMB_TUCK,  LTHUMB_HOME,  LTHUMB_REACH  ,   RTHUMB_REACH,  RTHUMB_HOME,  RTHUMB_TUCK
+        LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH  ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
   )>;
 };
 
@@ -26,44 +26,44 @@
 
 
 / {
-    behaviors {
-        // Swap out the standard dead key for a one-shot layer to override some of the keys
-        dead_key: dead_key {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&EZ_SL(ODK_LAYER)>, <&kp O>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // Macro to tap Ergo‑L’s ODK before the specified key
-        odk: one_dead_key_macro {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_tap &kp O>
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                ;
-        };
-
-        // Same as `odk`, but adds Shift to the speicied key
-        odks: one_dead_key_shift_macro {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            tap-ms = <0>;
-            wait-ms = <0>;
-            bindings
-                = <&macro_tap &kp O>
-                , <&macro_press &kp LSHIFT>
-                , <&macro_param_1to1>
-                , <&macro_tap &kp MACRO_PLACEHOLDER>
-                , <&macro_release &kp LSHIFT>
-                ;
-        };
+  behaviors {
+    // Swap out the standard dead key for a one-shot layer to override some of the keys
+    dead_key: dead_key {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&EZ_SL(ODK_LAYER)>, <&kp O>;
+      mods      = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+
+    // Macro to tap Ergo‑L’s ODK before the specified key
+    odk: one_dead_key_macro {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&macro_tap &kp O>
+        , <&macro_param_1to1>
+        , <&macro_tap &kp MACRO_PLACEHOLDER>
+        ;
+    };
+
+    // Same as `odk`, but adds Shift to the speicied key
+    odks: one_dead_key_shift_macro {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+        = <&macro_tap &kp O>
+        , <&macro_press &kp LSHIFT>
+        , <&macro_param_1to1>
+        , <&macro_tap &kp MACRO_PLACEHOLDER>
+        , <&macro_release &kp LSHIFT>
+        ;
+    };
+  };
 };
 
 // Extra layers defned specifically for this keymap.
@@ -98,7 +98,7 @@
         &trans  ,  &trans  &trans  &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
         &trans  ,  S_TILDE &trans  &trans  S_HASH  &trans   ,   &trans  S_PIPE  &trans  &trans  S_QMARK ,  &trans ,
         &trans  ,  &trans  &trans  &trans  &trans  &trans   ,   &trans  &trans  &trans  &trans  &trans  ,  &trans ,
-                                &trans , &trans , &trans   ,   &trans , &trans , &trans
+                                 &trans , &trans , &trans   ,   &trans , &trans , &trans
       )>;
     };
 
