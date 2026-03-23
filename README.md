@@ -1,6 +1,6 @@
 # zmk-config-selenium
 
-This is a [ZMK](https://zmk.dev/) implementation of the [selenium keymap](https://onedeadkey.github.io/selenium/).
+This is a [ZMK](https://zmk.dev/) implementation of the [Selenium keymap](https://onedeadkey.github.io/selenium/).
 
 This repository also contains Selenium firmware builds for these keyboards:
 - [Corne](https://github.com/foostan/crkbd)
