@@ -1,7 +1,7 @@
 // Selenium keymap:
 // https://github.com/OneDeadKey/selenium
 
-
+#ifndef CI_IGNORE_USER_SETTINGS
 /******************************************************************************
  * Layout-specific actions and symbols.
 ******************************************************************************/
@@ -74,10 +74,12 @@
 
 // #define LEFT_HAND_SPACE
 
+#endif /* CI_IGNORE_USER_SETTINGS */
+
 
 /******************************************************************************
  * Keymap
-******************************************************************************/
+*****************************************************************************/
 
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
