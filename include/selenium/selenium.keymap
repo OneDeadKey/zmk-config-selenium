@@ -12,6 +12,7 @@
 
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
+#include "dead_keys.dtsi" // defines dead key helpers
 #include "hold_taps.dtsi" // defines thumb keys and homerow mods
 
 /**
@@ -123,8 +124,14 @@
   };
 };
 
+// Emulated layouts (experimental!)
+#ifdef KB_EMULATION_DVORAK
+  #include "emulations/dvorak.dtsi"
+#elif defined KB_EMULATION_ERGOL
+  #include "emulations/ergol.dtsi"
+
 // Some layouts require extra layers to fit on the Quacken.
-#ifdef KB_LAYOUT_AZERTY
+#elif defined KB_LAYOUT_AZERTY
   #include "extra_layers/azerty.dtsi"
 #elif defined KB_LAYOUT_BEPO
   #include "extra_layers/bepo.dtsi"
