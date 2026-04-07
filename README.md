@@ -38,37 +38,14 @@ Add to the `manifest/projects` section:
 2. Modify your keymap
 
 Your keymap should be defined in `config/$keyboard.keymap`.
-Replace its whole content with something like:
-```
-#define KB_LAYOUT_ERGOL
-#define VIM_NAVIGATION
-#define HRM_SHIFT
+You will only need 2 things in this file:
+- a [`SELENIUM_KEYMAP_BINDINGS`](include/selenium/bindings.h) definition for your keyboard geometry
+- a `#include "../zmk-config-selenium/include/selenium/selenium.keymap"` line at the very end of the file
+- optionally, you can `#define` some of the options documented in [`selenium.keymap`](include/selenium/selenium.keymap)
 
-#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
-                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
-                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
-                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
-          LROW1   RROW1       \
-          LROW2   RROW2       \
-    LOUT3 LROW3   RROW3 ROUT3 \
-    LT1 LT2 LT3   RT3 RT2 RT1
-
-
-#include "../zmk-config-selenium/include/selenium/selenium.keymap"
-```
-
-`SELENIUM_KEYMAP_BINDINGS` must be defined to adjust Selenium to your keyboard geometry.
-You can find some examples in [`zmk-config-selenium/config`](https://github.com/OneDeadKey/zmk-config-selenium/tree/main/config).
-
-At the end of your keymap, you must have this line:
-```
-#include "../zmk-config-selenium/include/selenium/selenium.keymap"
-```
-
-The `#define` at the beginning are optional and allow to set some
-`zmk-config-selenium` options. These are described at the [beginning of the
-Selenium keymap]
-(https://github.com/OneDeadKey/zmk-config-selenium/blob/main/include/selenium/selenium.keymap).
+See the [Totem](config/totem.keymap) or the [Glove80](config/glove80.keymap) keymaps for some examples.
+Do not copy the `#include` line from these example, a different path is needed
+when building with `zmk-config-selenium` as an external module.
 
 3. Build your keymap
 
