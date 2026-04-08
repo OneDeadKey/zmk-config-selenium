@@ -24,10 +24,10 @@ If your keyboard is not listed in this file, follow the steps from [this section
 
 2. Set the options you want
 
-The available options are described in [`selenium.keymap`](include/selenium/selenium.keymap).
+The available options are described in [`settings.h`](include/selenium/settings.h).
 You can either `#define` them in this file, they will be shared by all the keyboards that you build.
 Or you can `#define` these options in the keyboard keymap definition in
-[`config`](config), in this case it will only be set for this specific
+[`config`](config), in this case, they will only be set for this specific
 keyboard.
 
 3. Build the keymap
@@ -71,7 +71,7 @@ Your keymap should be defined in `config/$keyboard.keymap`.
 You will only need 2 things in this file:
 - a [`SELENIUM_KEYMAP_BINDINGS`](include/selenium/bindings.h) definition for your keyboard geometry
 - a `#include "../zmk-config-selenium/include/selenium/selenium.keymap"` line at the very end of the file
-- optionally, you can `#define` some of the options documented in [`selenium.keymap`](include/selenium/selenium.keymap)
+- optionally, you can `#define` some of the options documented in [`settings.h`](include/selenium/settings.h)
 
 See the [TOTEM](config/totem.keymap) or the [Glove80](config/glove80.keymap) keymaps for some examples.
 Do not copy the `#include` line from these example, a different path is needed
@@ -114,7 +114,7 @@ In our example, it will be `config/totem.keymap` for a TOTEM keyboard.
 You will only need 2 things in this file:
 - a [`SELENIUM_KEYMAP_BINDINGS`](include/selenium/bindings.h) definition for your keyboard geometry
 - a `#include "../include/selenium/selenium.keymap"` line at the very end of the file
-- optionally, you can `#define` some of the options documented in [`selenium.keymap`](include/selenium/selenium.keymap)
+- optionally, you can `#define` some of the options documented in [`settings.h`](include/selenium/settings.h)
 
 See the [TOTEM](config/totem.keymap) or the [Glove80](config/glove80.keymap) keymaps for some examples.
 
