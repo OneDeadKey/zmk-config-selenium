@@ -39,6 +39,15 @@ on:
         - Erglace
         - Qwerty
         - Qwerty-Lafayette
+      keyboardEmulation:
+        description: 'Keyboard Emulation (requires a QWERTY or AZERTY layout)'
+        required: true
+        default: 'None'
+        type: choice
+        options:
+        - No Emulation
+        - Dvorak
+        - Ergo-L
       macPc:
         description: 'Keyboard Type'
         required: true
@@ -73,6 +82,7 @@ jobs:
           echo "Keyboard: $KBD"
           echo "Hold Taps: $HOLD_TAPS"
           echo "Keyboard Layout: $KB_LAYOUT"
+          echo "Keyboard Layout: $KB_EMULATION"
           echo "Keyboard Type: $MAC_PC"
           echo "Vim Navigation: $VIM_NAV"
           echo "HRM Shift: $HRM_SHIFT"
@@ -136,6 +146,15 @@ jobs:
             ;;
             Qwerty-Lafayette)
               COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_QWERTY_LAFAYETTE"
+            ;;
+          esac
+
+          case $KB_EMULATION in
+            Dvorak)
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_EMULATION_DVORAK"
+            ;;
+            Ergo-L)
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_EMULATION_ERGOL"
             ;;
           esac
 
@@ -211,6 +230,7 @@ jobs:
           KBD: ${{ inputs.Keyboard }}
           HOLD_TAPS: ${{ inputs.holdTaps }}
           KB_LAYOUT: ${{ inputs.keyboardLayout }}
+          KB_EMULATION: ${{ inputs.keyboardEmulation }}
           MAC_PC: ${{ inputs.macPc }}
           VIM_NAV: ${{ inputs.vimNav }}
           HRM_SHIFT: ${{ inputs.hrmShift }}
