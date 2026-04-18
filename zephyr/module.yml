@@ -1,0 +1,5 @@
+name: zmk-config-selenium
+build:
+  cmake: .
+  settings:
+    dts_root: .
