@@ -78,3 +78,14 @@ include:
     shield: corne_left
     artifact-name: tester_qwerty_intl_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DIGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_ERGOL"
+
+  # Lafayette emulation on Azerty
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: corne_left
+    artifact-name: azerty_to_lafayette
+    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DIGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_QWERTY_LAFAYETTE"
+
+  # Lafayette emulation on Qwerty-intl
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: corne_left
+    cmake-args: -DDTS_EXTRA_CPP_FLAGS="-DIGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_INTL;-DKB_EMULATION_QWERTY_LAFAYETTE"
