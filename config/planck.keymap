@@ -1,0 +1,15 @@
+// Selenium support for the Planck keyboard
+// ZMK requires a Planck v6 or Planck v7
+// The thumb keys are mapped to the 6 central bottom keys
+// This means the Planck must be using a bottom row with only 1U keys
+
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
+    LOUT1     LROW1                                                  RROW1  ROUT1     \
+    LOUT2     LROW2                                                  RROW2  ROUT2     \
+    LOUT3     LROW3                                                  RROW3  ROUT3     \
+    &none     &none   &none  LT1  LT2  LT3      RT3  RT2  RT1  &none &none  &none
+
+#include "../include/selenium/selenium.keymap"
