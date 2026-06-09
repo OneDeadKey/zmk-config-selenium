@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/Nuclear-Squid
     - name: raeedcho
       url-base: https://github.com/raeedcho
+    - name: rloutier
+      url-base: https://github.com/rloutier
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -21,6 +23,9 @@ manifest:
       revision: main
     - name: temper-zmk-config
       remote: raeedcho
+      revision: main
+    - name: zmk-config-go60
+      remote: rloutier
       revision: main
   self:
     path: config
