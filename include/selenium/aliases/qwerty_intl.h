@@ -70,7 +70,7 @@
 
 #define SA(key) RS(RA(key))
 
-// acute accent + cedilla
+// acute accent
 #define  C_AACU &digraph SQT A     // á
 #define SC_AACU &digraph SQT RS(A) // Á
 #define  C_EACU &digraph SQT E     // é
@@ -83,8 +83,15 @@
 #define SC_UACU &digraph SQT RS(U) // Ú
 #define  C_YACU &digraph SQT Y     // ý
 #define SC_YACU &digraph SQT RS(Y) // Ý
-#define  C_CCDL &digraph SQT C     // ç
-#define SC_CCDL &digraph SQT RS(C) // ç
+
+// cedilla
+#ifdef MACOS
+  #define  C_CCDL &digraph SQT C        // ç
+  #define SC_CCDL &digraph SQT RS(C)    // ç
+#else
+  #define  C_CCDL &kp RA(COMMA)  // ç
+  #define SC_CCDL &kp SA(COMMA)  // ç
+#endif
 
 // grave accent
 #define  C_AGRV &digraph GRAVE A     // à
@@ -170,7 +177,11 @@
 // quote signs
 #define C_LSQT  &kp RA(N9)    // ‘
 #define C_RSQT  &kp RA(N0)    // ’
-#define C_APOS  &kp RA(N0)    // ’
+#ifdef MACOS
+  #define C_APOS  &kp SA(RBKT)    // ’
+#else
+  #define C_APOS  &kp RA(N0)    // ’
+#endif
 #define C_LGQT  &kp RA(LBKT)  // «
 #define C_RGQT  &kp RA(RBKT)  // »
 #ifdef LINUX
